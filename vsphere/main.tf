@@ -4,7 +4,7 @@ provider "vsphere" {
   #vsphere_server = "vra-vc-01.sterling.lab"
 
   # If you have a self-signed cert
-  #allow_unverified_ssl = true
+  allow_unverified_ssl = true
 }
 
 data "vsphere_datacenter" "dc" {
