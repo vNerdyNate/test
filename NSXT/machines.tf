@@ -44,7 +44,7 @@ resource "vsphere_virtual_machine" "SQL" {
   connection {
     type     = "ssh"
     user     = "root"
-    password = var.vmpass
+    password = var.vpassword
     host     = vsphere_virtual_machine.SQL.default_ip_address
   }
 }
@@ -94,7 +94,7 @@ resource "vsphere_virtual_machine" "web1" {
   connection {
     type     = "ssh"
     user     = "root"
-    password = var.vmpass
+    password = var.vpassword
     host     = vsphere_virtual_machine.web1.default_ip_address
   }
 
@@ -147,7 +147,7 @@ resource "vsphere_virtual_machine" "web2" {
   connection {
     type     = "ssh"
     user     = "root"
-    password = var.vmpass
+    password = var.vpassword
     host     = vsphere_virtual_machine.web2.default_ip_address
   }
 
