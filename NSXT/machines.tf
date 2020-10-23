@@ -37,8 +37,7 @@ resource "vsphere_virtual_machine" "SQL" {
   
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/sql.sh",
-      "/tmp/sql.sh",
+      "/home/ubuntu/sql.sh",
     ]
   }
   connection {
@@ -87,8 +86,7 @@ resource "vsphere_virtual_machine" "web1" {
   }
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/web.sh",
-      "/tmp/web.sh ${vsphere_virtual_machine.SQL.default_ip_address}",
+      "/home/ubuntu/web.sh ${vsphere_virtual_machine.SQL.default_ip_address}",
     ]
   }
   connection {
@@ -140,8 +138,7 @@ resource "vsphere_virtual_machine" "web2" {
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/web.sh",
-      "/tmp/web.sh ${vsphere_virtual_machine.SQL.default_ip_address}",
+      "/home/ubuntu/web.sh ${vsphere_virtual_machine.SQL.default_ip_address}",
     ]
   }
   connection {
