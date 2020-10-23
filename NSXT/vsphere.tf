@@ -8,8 +8,8 @@ provider "vsphere" {
 }
 provider "nsxt" {
 #  host                     = "vra-nsxt-01.sterling.lab"
-#  username                 = var.nsuser
-#  password                 = var.nspass
+  username                 = var.nsuser
+  password                 = var.nspass
 #  allow_unverified_ssl     = true
 #  max_retries              = 10
 #  retry_min_delay          = 500
