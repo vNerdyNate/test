@@ -35,11 +35,6 @@ resource "vsphere_virtual_machine" "SQL" {
     }
   }
   
-  provisioner "file" {
-    source      = "sql.sh"
-    destination = "/tmp/sql.sh"
-  }
-
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/sql.sh",
@@ -90,11 +85,6 @@ resource "vsphere_virtual_machine" "web1" {
       network_interface {}
     }
   }
-  provisioner "file" {
-    source      = "web.sh"
-    destination = "/tmp/web.sh"
-  }
-
   provisioner "remote-exec" {
     inline = [
       "chmod +x /tmp/web.sh",
@@ -146,10 +136,6 @@ resource "vsphere_virtual_machine" "web2" {
       }
       network_interface {}
     }
-  }
-  provisioner "file" {
-    source      = "web.sh"
-    destination = "/tmp/web.sh"
   }
 
   provisioner "remote-exec" {
