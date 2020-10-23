@@ -1,5 +1,6 @@
 #!/bin/bash
 #Web Setup
+apt-get update
 apt-get install -y apache2
 apt install -y php
 apt install -y php-mysql
