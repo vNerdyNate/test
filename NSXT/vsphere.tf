@@ -1,3 +1,12 @@
+terraform {
+  required_providers {
+    nsxt = {
+      source = "vmware/nsxt"
+      version = "3.1.0"
+    }
+  }
+}
+
 provider "vsphere" {
   user           = var.vuser
   password       = var.vpassword
@@ -7,14 +16,14 @@ provider "vsphere" {
   allow_unverified_ssl = true
 }
 provider "nsxt" {
-#  host                     = "vra-nsxt-01.sterling.lab"
-#  username                 = var.nsuser
-#  password                 = var.nspass
-#  allow_unverified_ssl     = true
-#  max_retries              = 10
-#  retry_min_delay          = 500
-#  retry_max_delay          = 5000
-#  retry_on_status_codes    = [429]
+  host                     = "vra-nsxt-01.sterling.lab"
+  username                 = var.nsuser
+  password                 = var.nspass
+  allow_unverified_ssl     = true
+  max_retries              = 10
+  retry_min_delay          = 500
+  retry_max_delay          = 5000
+  retry_on_status_codes    = [429]
 }
 data "vsphere_datacenter" "dc" {
   name = "Pacific-Datacenter"
