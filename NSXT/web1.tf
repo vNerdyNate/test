@@ -47,13 +47,13 @@ resource "vsphere_virtual_machine" "web1" {
   }
   provisioner "file" {
     source      = "web.sh"
-    destination = "/tmp/web.sh"
+    destination = "web.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/web.sh",
-      "/tmp/web.sh",
+      "chmod +x web.sh",
+      "web.sh",
     ]
   }
   connection {

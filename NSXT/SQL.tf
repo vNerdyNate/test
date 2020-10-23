@@ -49,13 +49,13 @@ resource "vsphere_virtual_machine" "SQL" {
   
   provisioner "file" {
     source      = "sql.sh"
-    destination = "/tmp/sql.sh"
+    destination = "sql.sh"
   }
 
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/sql.sh",
-      "/tmp/sql.sh",
+      "chmod +x sql.sh",
+      "sql.sh",
     ]
   }
   connection {
